@@ -1,19 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage("Build") {
       steps {
         echo 'building the application............'
         sh 'mvn clean package'
       }
     }
-    stage('Test') {
+    stage("Test") {
       steps {
         echo 'Testing  the application............'
         sh 'mvn test'
       }
     }
-    stage('Deploy') {
+    stage("Deploy") {
       when {
         branch 'master'
       }
